@@ -4,8 +4,8 @@ FROM n8nio/n8n:latest
 # Cambiamo utente per avere i permessi di installare pacchetti
 USER root
 
-# Installiamo poppler-utils (che contiene il convertitore) e puliamo la cache
-RUN apt-get update && apt-get install -y poppler-utils && rm -rf /var/lib/apt/lists/*
+# Installiamo poppler-utils usando il comando 'apk' per Alpine Linux
+RUN apk update && apk add --no-cache poppler-utils
 
 # Restituiamo il controllo all'utente n8n per sicurezza
 USER node
