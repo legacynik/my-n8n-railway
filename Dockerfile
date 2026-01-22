@@ -1,1 +1,1 @@
-FROM n8nio/n8n:1.119.2
+FROM n8nio/n8n:stable
